@@ -1,0 +1,865 @@
+/* Osnovni stilovi */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(221, 186, 96);
+    color: gray;
+}
+
+/* Zaglavlje */
+header {
+    background-color: black;
+    padding: 15px 0; /* Malo više prostora za lepši izgled */
+    color: rgb(182, 89, 89);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#logo img {
+    width: 250px;
+}
+
+.brand-name {
+    font-size: 26px; /* Nešto veći font za veći uticaj */
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Dodato glatko prelazno menjanje boje */
+}
+
+nav ul li a:hover {
+    color: #f4d03f; /* Svetlija nijansa zlatne za hover efekat */
+    text-decoration: underline;
+}
+
+/* Sekcija dobrodošlice */
+#home {
+    padding: 50px 20px;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+#home h2 {
+    font-size: 3.5rem;
+    color: grey;
+    position: relative;
+    animation: colorChange 5s forwards;
+}
+
+#home p {
+    font-size: 20px;
+    color: grey;
+}
+
+/* Sekcija o nama */
+#about, #services, #contact, #gallery {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
+    background-color: #faf0e6; /* Svetlija nijansa zlatne za pozadinu */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about h2, #services h2, #gallery h2, #contact h2 {
+    font-size: 30px;
+    color: goldenrod; /* Naslovi u zlatnoj boji */
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+#about p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Sekcija usluga */
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service-item {
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Efekat lebdenja */
+}
+
+.service-item img {
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.service-item h3 {
+    font-size: 20px;
+    color: goldenrod; /* Naslovi usluga u zlatnoj boji */
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Sekcija galerije */
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 24%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Blagi zoom efekat */
+}
+
+/* Kontakt forma */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-size: 16px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px;
+    font-size: 18px;
+    background-color: goldenrod; /* Dugme u zlatnoj boji */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #d4af37; /* Tamnija zlatna nijansa na hover */
+}
+
+/* Footer */
+footer {
+    background-color: goldenrod;
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    font-size: 35px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+/* Media queries za prilagođavanje mobilnim uređajima */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    .service-item {
+        width: 100%;
+    }
+
+    .gallery img {
+        width: 100%;
+    }
+}
+
+/* Animacija promjene boje iz sive u zlatnu */
+@keyframes colorChange {
+    0% {
+        color: grey;
+    }
+    100% {
+        color: goldenrod;
+    }
+}
+
+/* Stil za dobrodošlicu - animacija logotipa */
+#home .logo-container {
+    text-align: center;
+    margin-top: 50px;
+    opacity: 2;
+    visibility: hidden;
+    animation: showLogo 3s forwards 2s;
+}
+
+@keyframes showLogo {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Razmak između ikona */
+    padding: 10px 0;
+    background-color: goldenrod; /* Pozadina u zlatnoj boji */
+}
+
+.footer-social-icons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white; /* Tekst i ikone u bijeloj boji */
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-social-icons a:hover {
+    transform: scale(1.1); /* Efekat povećanja na hover */
+}
+
+.footer-social-icons img {
+    width: 40px; /* Veličina ikona društvenih mreža */
+    height: 40px;
+    border-radius: 30%; /* Okrugle ikone */
+    margin-bottom: 5px; /* Razmak između ikone i teksta */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.footer-social-icons img:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Blaga senka na hover */
+}
+
+.social-icon-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.social-icon-text {
+    font-size: 12px;
+    color: white; /* Boja za broj telefona */
+}
+
+.call-now {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: goldenrod;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* General Header Styles */
+header {
+    background: whitesmoke; /* Adjust color as needed */
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+#logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Mobile Menu Styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hide menu by default */
+.nav-list {
+    display: flex;
+}
+
+.nav-list.active {
+    display: block;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    background: #333;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list.active li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.nav-list.active a {
+    font-size: 18px;
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-list.active a:hover {
+    background: #555; /* Color for hover effect */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        background: #333;
+        width: 100%;
+        padding: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: max-height 0.3s ease-out;
+        max-height: 0; /* Initial hidden state */
+        overflow: hidden;
+    }
+    .nav-list.active {
+        max-height: 500px; /* Adjust as needed to fit content */
+    }
+}
+.map {
+    margin: 20px 0; /* Razmak oko mape */
+    border-radius: 10px; /* Zaobljeni uglovi */
+    overflow: hidden; /* Da se zaobljeni uglovi pravilno prikazuju */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Senca za dodatni vizualni efekat */
+}
+
+.map iframe {
+    border: none; /* Uklanjanje okvira oko iframe-a */
+    border-radius: 10px; /* Zaobljeni uglovi iframe-a */
+    width: 100%; /* Popunjava celu širinu roditeljskog elementa */
+    height: 450px; /* Određuje visinu mape */
+}
+
+
+/* Mobile Menu Styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    background-color: goldenrod;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hide menu by default */
+.nav-list {
+    display: flex;
+}
+
+.nav-list.active {
+    display: block;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    background: goldenrod;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list.active li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.nav-list.active a {
+    font-size: 18px;
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nav-list.active a:hover {
+    background: goldenrod; /* Color for hover effect */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        background: #333;
+        width: 100%;
+        padding: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: max-height 0.3s ease-out;
+        max-height: 0; /* Initial hidden state */
+        overflow: hidden;
+    }
+    .nav-list.active {
+        max-height: 500px; /* Adjust as needed to fit content */
+    }
+}
+
+.call-now:hover {
+    background-color: goldenrod; /* Pozadina na hover za dugme za poziv */
+}
+
+.call-now img {
+    width: 30px; /* Manja slika za ikonu poziva */
+    height: 30px;
+    margin-bottom: 5px;
+}
+.project {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.project-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.project-gallery img {
+    width: 24%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.project-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.lightbox-slide img {
+    max-width: 80%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.lightbox-slide {
+    display: none;
+    text-align: center;
+}
+
+.lightbox-slide img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    font-size: 24px;
+    color: white;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+/* Stilovi za slike projekata */
+.project-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Maksimalna širina slike */
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; /* Centriranje slike */
+}
+
+/* Stilovi za modal projekata */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    height: auto;
+    text-align: center;
+}
+
+.modal-project-description {
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Navigacija unutar modala */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Prilagodba mobilnim uređajima */
+@media only screen and (max-width: 600px) {
+    .modal-content {
+        max-width: 100%;
+    }
+}
+.active {
+    display: block;
+}
+
+/* Slika koja se prikazuje */
+.modal-project-gallery img.active {
+    display: block;
+}
+
+/* Dugmad za navigaciju */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 10px;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Hover efekti za dugmad */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsivnost za manje uređaje */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        max-width: 700px;
+    }
+
+    .prev, .next {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .prev, .next {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1001;
+    overflow: auto;
+}
+
+.modal-content {
+    position: relative;
+    margin: 10% auto;
+    max-width: 80%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.modal-images {
+    position: relative;
+}
+
+.modal-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
